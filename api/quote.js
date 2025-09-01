@@ -74,7 +74,7 @@ module.exports = async (req, res) => {
 
   try {
     const { error } = await resend.emails.send({
-      from: process.env.MAIL_FROM, // e.g. quotes@send.motshete.com
+      from: `Quotes <${process.env.MAIL_FROM}>`, // e.g. quotes@send.motshete.com
       to: [process.env.MAIL_TO], // your inbox
       replyTo: email,
       subject: `Quote Request: ${service} – ${company}`,
